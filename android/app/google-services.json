@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "152416781307",
+    "project_id": "medical-visitors",
+    "storage_bucket": "medical-visitors.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:152416781307:android:2c74bbcc710d12fda3015e",
+        "android_client_info": {
+          "package_name": "com.example.flutter_visitas_medicas"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "152416781307-qfq5e4lltaq8kkgug3984p2mdoqo7d3j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDrU6pBEwcgOdyvZz-CUFovduWmQUCYM3w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "152416781307-qfq5e4lltaq8kkgug3984p2mdoqo7d3j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,11 +1,16 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 void main() {
-  runApp(const MyApp());
+  WidgetsFlutterBinding.ensureInitialized();
+  Firebase.initializeApp().then((value) => runApp(MyApp()));
+
 }
 
+// ignore: use_key_in_widget_constructors
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  // const MyApp({Key? key}) : super(key: key);
 
   // This widget is the root of your application.
   @override
@@ -24,7 +29,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'Home aaa'),
     );
   }
 }
@@ -48,6 +53,28 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  @override
+  void initState() {
+    super.initState();
+    getPatients();
+  }
+
+  void getPatients() async {
+    CollectionReference collectionReference =
+        FirebaseFirestore.instance.collection("Patient");
+
+    QuerySnapshot users = await collectionReference.get();
+    // ignore: avoid_print
+    print('test'); // no me imprime nada
+    if (users.docs.isNotEmpty) {
+      for (var doc in users.docs) {
+            // ignore: avoid_print
+        print(doc.data()); // no me imprime nada
+      }
+    }
+    print(users.docs.length); // imprime 0
+  }
+
   int _counter = 0;
 
   void _incrementCounter() {
@@ -96,7 +123,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text(
-              'You have pushed the button this many times:',
+              'Contador de pulsacioness:',
             ),
             Text(
               '$_counter',
