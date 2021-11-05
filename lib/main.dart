@@ -5,7 +5,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   Firebase.initializeApp().then((value) => runApp(MyApp()));
-
 }
 
 // ignore: use_key_in_widget_constructors
@@ -29,7 +28,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Home aaa'),
+      home: const MyHomePage(title: 'Pacientes'),
     );
   }
 }
@@ -68,11 +67,11 @@ class _MyHomePageState extends State<MyHomePage> {
     print('test'); // no me imprime nada
     if (users.docs.isNotEmpty) {
       for (var doc in users.docs) {
-            // ignore: avoid_print
+        // ignore: avoid_print
         print(doc.data()); // no me imprime nada
       }
     }
-    print(users.docs.length); // imprime 0
+    (users.docs.length); // imprime 0
   }
 
   int _counter = 0;
